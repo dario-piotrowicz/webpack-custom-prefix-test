@@ -1,0 +1,25 @@
+{
+  "name": "webpack-custom-prefix-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dario-piotrowicz/webpack-custom-prefix-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dario-piotrowicz/webpack-custom-prefix-test/issues"
+  },
+  "homepage": "https://github.com/dario-piotrowicz/webpack-custom-prefix-test#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "babel-loader": "^9.1.2",
+    "@babel/preset-env": "^7.20.2"
+  }
+}
