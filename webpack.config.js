@@ -10,7 +10,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /a\.js/,
+        test: /custom-loader.js/,
         use: {
           loader: 'custom-loader'
         }
@@ -45,7 +45,7 @@ module.exports = {
             normalModuleFactory.hooks.resolve
               .tap("MyCustomPlugin", resourceData => {
                 if(resourceData.request === 'custom:module-a') {
-                  resourceData.request = './a.js';
+                  resourceData.request = path.resolve(__dirname, 'custom-loader.js');
                 }
               });
           }
