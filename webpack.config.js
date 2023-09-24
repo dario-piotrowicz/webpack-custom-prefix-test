@@ -10,12 +10,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /custom-loader.js/,
-        use: {
-          loader: 'custom-loader'
-        }
-      },
-      {
         test: /\.js$/,
         exclude: /nodeModules/,
         use: {
@@ -31,11 +25,6 @@ module.exports = {
       },
     ],
   },
-  resolveLoader: {
-    alias: {
-      'custom-loader': path.resolve(__dirname, 'custom-loader.js'),
-    },
-  },
   plugins: [
     {
       apply: (compiler) => {
@@ -45,7 +34,7 @@ module.exports = {
             normalModuleFactory.hooks.resolve
               .tap("MyCustomPlugin", resourceData => {
                 if(resourceData.request === 'custom:module-a') {
-                  resourceData.request = path.resolve(__dirname, 'custom-loader.js');
+                  resourceData.request = path.resolve(__dirname, '__my-fn-a__.js');
                 }
               });
           }
